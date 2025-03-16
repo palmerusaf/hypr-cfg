@@ -65,7 +65,7 @@
 
     // Modules Center
     "modules-center": [
-"hyprland/window",
+        //"hyprland/window",
         "custom/empty"
     ],
 
@@ -75,7 +75,7 @@
         "pulseaudio",
 //"backlight",
         "bluetooth",
-"network",
+        //"network",
         "battery", 
         "power-profiles-daemon",
         "group/hardware",
