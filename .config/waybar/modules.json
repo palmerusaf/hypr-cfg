@@ -241,13 +241,13 @@
 
   // CPU
   "cpu": {
-    "format": "/ C {usage}% ",
+    "format": "CPU {usage}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
 
   // Memory
   "memory": {
-    "format": "/ M {}% ",
+    "format": "RAM {}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
 
