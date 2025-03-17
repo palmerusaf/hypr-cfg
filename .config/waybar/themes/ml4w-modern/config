@@ -27,10 +27,11 @@
     "modules-left": [
         //"custom/appmenu",
         //"hyprland/workspaces",
-        "group/links",
+        //"group/links",
         //"wlr/taskbar",
         //"group/quicklinks",
-        "custom/empty"
+        //"custom/empty",
+        "custom/updates",
     ],
 
     // Modules Center
@@ -43,7 +44,6 @@
 
     // Modules Right    
     "modules-right": [
-        //"custom/updates",
         //"backlight",
         //"bluetooth",
         //"network",
