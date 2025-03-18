@@ -27,7 +27,7 @@ declare -A online_music=(
   ["YT - Korean Drama OST 📹🎶"]="https://youtube.com/playlist?list=PLUge_o9AIFp4HuA-A3e3ZqENh63LuRRlQ"
   ["YT - lofi hip hop radio beats 📹🎶"]="https://www.youtube.com/live/jfKfPfyJRdk?si=PnJIA9ErQIAw6-qd"
   ["YT - Relaxing Piano Jazz Music 🎹🎶"]="https://youtu.be/85UEqRat6E4?si=jXQL1Yp2VP_G6NSn"
-  ["YT - DJ REMIX 2025 📹🎶"]="https://www.youtube.com/watch?v=gKjnuz0xPpA"
+  ["YT - Chill City Remix 📹🎶"]="https://www.youtube.com/playlist?list=PLLvHklUmDlPsjZTug1zUZwQFGsg6dg39s"
 )
 
 # Populate local_music array with files from music directory and subdirectories
