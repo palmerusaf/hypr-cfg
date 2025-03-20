@@ -5,6 +5,8 @@
         "padding": {
             "top": 2,
         },
+        "type": "file",
+        "source": "~/.config/fastfetch/logo.txt",
     },
     "display": {
         "separator": " ➜  ",
