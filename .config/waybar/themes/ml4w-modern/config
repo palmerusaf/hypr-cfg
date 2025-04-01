@@ -52,7 +52,7 @@
         "cpu",
         "memory",
         //"group/tools",
-        //"tray",
+        "tray",
         //"custom/ml4w-welcome",
         "pulseaudio",
         //"custom/exit",
