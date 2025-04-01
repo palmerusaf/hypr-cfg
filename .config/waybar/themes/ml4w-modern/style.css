@@ -312,6 +312,7 @@ window#waybar.empty #window {
 }
 
 #custom-updates.green {
+    opacity: 0;
     background-color: @backgroundlight;
 }
 
