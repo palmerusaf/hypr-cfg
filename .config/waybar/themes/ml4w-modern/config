@@ -55,7 +55,7 @@
         //"tray",
         //"custom/ml4w-welcome",
         "pulseaudio",
+        //"custom/exit",
         "battery", 
-        "custom/exit",
     ]
 }
