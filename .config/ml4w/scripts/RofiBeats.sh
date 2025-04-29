@@ -64,7 +64,7 @@ play_local_music() {
 	    notification "$choice"
 
       # Play the selected local music file using mpv
-      mpv --playlist-start="$i" --loop-playlist --vid=no  "${local_music[@]}"
+      mpv --input-ipc-server=/tmp/mpvsock --playlist-start="$i" --loop-playlist --vid=no  "${local_music[@]}"
 
       break
     fi
@@ -76,7 +76,7 @@ shuffle_local_music() {
   notification "Shuffle Play local music"
 
   # Play music in $mDIR on shuffle
-  mpv --shuffle --loop-playlist --vid=no "$mDIR"
+  mpv --input-ipc-server=/tmp/mpvsock --shuffle --loop-playlist --vid=no "$mDIR"
 }
 
 # Main function for playing online music
@@ -94,7 +94,7 @@ play_online_music() {
   notification "$choice"
   
   # Play the selected online music using mpv
-  mpv --shuffle --vid=no "$link"
+  mpv --input-ipc-server=/tmp/mpvsock --shuffle --vid=no "$link"
 }
 
 
