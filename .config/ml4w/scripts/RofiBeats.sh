@@ -1,14 +1,9 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# For Rofi Beats to play online Music or Locally save media files
 
-# Variables
 mDIR="$HOME/Music/"
-iDIR="$HOME/.config/swaync/icons"
-rofi_theme="$HOME/.config/rofi/config-rofi-Beats.rasi"
-rofi_theme_1="$HOME/.config/rofi/config-rofi-Beats-menu.rasi"
+iDIR="$HOME/.config/swaync/icons"  # Use your own icon directory
+wofi_base_cmd="wofi --show dmenu --app-id 'wofi-music' --width 600 --height 400 --allow-markup --insensitive --always-show"
 
-# Online Stations. Edit as required
 declare -A online_music=(
   ["FM - Easy Rock 96.3 📻🎶"]="https://radio-stations-philippines.com/easy-rock"
   ["FM - Easy Rock - Baguio 91.9 📻🎶"]="https://radio-stations-philippines.com/easy-rock-baguio" 
@@ -41,87 +36,45 @@ populate_local_music() {
   done < <(find -L "$mDIR" -type f \( -iname "*.mp3" -o -iname "*.flac" -o -iname "*.wav" -o -iname "*.ogg" -o -iname "*.mp4" \))
 }
 
-# Function for displaying notifications
 notification() {
-  notify-send -u normal -i "$iDIR/music.png" " Now Playing:" " $@"
+  notify-send -u normal -i "$iDIR/music.png" "Now Playing:" "$@"
 }
 
-# Main function for playing local music
 play_local_music() {
   populate_local_music
+  choice=$(printf "%s\n" "${filenames[@]}" | $wofi_base_cmd --prompt "🎵 Local Music")
+  [ -z "$choice" ] && exit 1
 
-  # Prompt the user to select a song
-  choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config $rofi_theme)
-
-  if [ -z "$choice" ]; then
-    exit 1
-  fi
-
-  # Find the corresponding file path based on user's choice and set that to play the song then continue on the list
   for (( i=0; i<"${#filenames[@]}"; ++i )); do
     if [ "${filenames[$i]}" = "$choice" ]; then
-		
-	    notification "$choice"
-
-      # Play the selected local music file using mpv
-      mpv --input-ipc-server=/tmp/mpvsock --playlist-start="$i" --loop-playlist --vid=no  "${local_music[@]}"
-
+      notification "$choice"
+      mpv --input-ipc-server=/tmp/mpvsock --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
       break
     fi
   done
 }
 
-# Main function for shuffling local music
 shuffle_local_music() {
   notification "Shuffle Play local music"
-
-  # Play music in $mDIR on shuffle
   mpv --input-ipc-server=/tmp/mpvsock --shuffle --loop-playlist --vid=no "$mDIR"
 }
 
-# Main function for playing online music
 play_online_music() {
-  choice=$(for online in "${!online_music[@]}"; do
-      echo "$online"
-    done | sort | rofi -i -dmenu -config "$rofi_theme")
-
-  if [ -z "$choice" ]; then
-    exit 1
-  fi
-
-  link="${online_music[$choice]}"
+  choice=$(for label in "${!online_music[@]}"; do echo "$label"; done | sort | $wofi_base_cmd --prompt "🌐 Online Radio")
+  [ -z "$choice" ] && exit 1
 
   notification "$choice"
-  
-  # Play the selected online music using mpv
-  mpv --input-ipc-server=/tmp/mpvsock --shuffle --vid=no "$link"
+  mpv --input-ipc-server=/tmp/mpvsock --shuffle --vid=no "${online_music[$choice]}"
 }
 
-
-# Check if an online music process is running and send a notification, otherwise run the main function
+# If MPV is running, stop it
 pkill mpv && notify-send -u low -i "$iDIR/music.png" "Music stopped" || {
+  main_choice=$(printf "Play from Online Stations\nPlay from Music directory\nShuffle Play from Music directory" | $wofi_base_cmd --prompt "🎶 Music Source")
 
-# Check if rofi is already running
-if pidof rofi > /dev/null; then
-  pkill rofi
-fi
-
-
-# Prompt the user to choose between local and online music
-user_choice=$(printf "Play from Online Stations\nPlay from Music directory\nShuffle Play from Music directory" | rofi -dmenu -config $rofi_theme_1)
-
-  case "$user_choice" in
-    "Play from Music directory")
-      play_local_music
-      ;;
-    "Play from Online Stations")
-      play_online_music
-      ;;
-    "Shuffle Play from Music directory")
-      shuffle_local_music
-      ;;
-    *)
-      echo "Invalid choice"
-      ;;
+  case "$main_choice" in
+    "Play from Music directory") play_local_music ;;
+    "Play from Online Stations") play_online_music ;;
+    "Shuffle Play from Music directory") shuffle_local_music ;;
+    *) echo "Invalid choice" ;;
   esac
 }
