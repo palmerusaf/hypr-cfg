@@ -24,6 +24,7 @@ declare -A online_music=(
   ["YT - lofi hip hop radio beats 📹🎶"]="https://www.youtube.com/live/jfKfPfyJRdk?si=PnJIA9ErQIAw6-qd"
   ["YT - Relaxing Piano Jazz Music 🎹🎶"]="https://youtu.be/85UEqRat6E4?si=jXQL1Yp2VP_G6NSn"
   ["YT - Chill City Remix 📹🎶"]="https://www.youtube.com/playlist?list=PLLvHklUmDlPsjZTug1zUZwQFGsg6dg39s"
+  ["YT - Best of Remix Official 📹🎶"]="https://www.youtube.com/playlist?list=PLAAE6DEACD2F2B5C1"
 )
 
 # Populate local_music array with files from music directory and subdirectories
