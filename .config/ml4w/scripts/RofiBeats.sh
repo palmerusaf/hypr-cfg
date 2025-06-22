@@ -14,6 +14,7 @@ declare -A online_music=(
 	# ["FM - WRock - CEBU 96.3 📻🎶"]="https://onlineradio.ph/126-96-3-wrock.html"
 	# ["YT - Korean Drama OST 📹🎶"]="https://youtube.com/playlist?list=PLUge_o9AIFp4HuA-A3e3ZqENh63LuRRlQ"
 	# ["YT - Wish 107.5 YT Pinoy HipHop 📻🎶"]="https://youtube.com/playlist?list=PLkrzfEDjeYJnmgMYwCKid4XIFqUKBVWEs&si=vahW_noh4UDJ5d37"
+	["FM - 96.5 The Crab 📻🎶"]="http://centova.rockhost.com:8054/locals"
 	["FM - WGMP 104.9 The Gump 📻🎶"]="https://ice9.securenetsystems.net/WGMP"
 	["Radio - 1 Pure EDM Radio 🎧🎶"]="http://qa.torontocast.com:1170/;?nocache=14484&type=http"
 	["Radio - Chillhop 🎧🎶"]="http://stream.zeno.fm/fyn8eh3h5f8uv"
