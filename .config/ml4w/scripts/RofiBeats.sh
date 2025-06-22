@@ -16,6 +16,7 @@ declare -A online_music=(
 	# ["YT - Wish 107.5 YT Pinoy HipHop 📻🎶"]="https://youtube.com/playlist?list=PLkrzfEDjeYJnmgMYwCKid4XIFqUKBVWEs&si=vahW_noh4UDJ5d37"
 	["Radio - 1 Pure EDM Radio 🎧🎶"]="http://qa.torontocast.com:1170/;?nocache=14484&type=http"
 	["Radio - Chillhop 🎧🎶"]="http://stream.zeno.fm/fyn8eh3h5f8uv"
+	["Radio - RADIO BOB! 90er Rock 🎧🎶"]="http://streams.radiobob.de/bob-90srock/aac-64/mediaplayer"
 	["Radio - Deep Space Chill 🎧🎶"]="http://stream.radioinfoweb.net:8000/chill"
 	["Radio - Ibiza Global 🎧🎶"]="https://filtermusic.net/ibiza-global"
 	["Radio - Lofi Girl 🎧🎶"]="https://play.streamafrica.net/lofiradio"
