@@ -4,10 +4,13 @@ mDIR="$HOME/Music/"
 iDIR="$HOME/.config/swaync/icons" # Use your own icon directory
 wofi_base_cmd="wofi --show dmenu --app-id 'wofi-music' --width 600 --height 400 --allow-markup --insensitive --always-show"
 
+# test url stations before adding with script below
+# mpv --input-ipc-server=/tmp/mpvsock --shuffle --vid=no "test here"
 declare -A online_music=(
 	["FM - Easy Rock 96.3 📻🎶"]="https://radio-stations-philippines.com/easy-rock"
 	["FM - Easy Rock - Baguio 91.9 📻🎶"]="https://radio-stations-philippines.com/easy-rock-baguio"
 	["FM - radio-classic-rockcom 📻🎶"]="https://my.streamingmedia.it/listen/radioclassicrock/radio.mp3"
+	["FM - 1 Pure EDM Radio 📻🎶"]="http://qa.torontocast.com:1170/;?nocache=14484&type=http"
 	["FM - Love Radio 90.7 📻🎶"]="https://radio-stations-philippines.com/love"
 	["FM - WRock - CEBU 96.3 📻🎶"]="https://onlineradio.ph/126-96-3-wrock.html"
 	["FM - Fresh Philippines 📻🎶"]="https://onlineradio.ph/553-fresh-fm.html"
