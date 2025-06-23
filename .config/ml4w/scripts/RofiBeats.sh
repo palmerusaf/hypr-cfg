@@ -73,7 +73,17 @@ play_online_music() {
 	[ -z "$choice" ] && exit 1
 
 	notification "$choice"
-	mpv --input-ipc-server=/tmp/mpvsock --shuffle --vid=no "${online_music[$choice]}"
+	mpv --input-ipc-server=/tmp/mpvsock --shuffle --vid=no "${online_music[$choice]}" &
+
+	# show current track after music starts
+	sleep 3
+	SOCK="/tmp/mpvsock"
+	# Get current song title
+	SONG_INFO=$(echo '{ "command": ["get_property", "media-title"] }' | socat - $SOCK)
+
+	# Extract title from JSON
+	TITLE=$(echo "$SONG_INFO" | grep -oP '"data":\s*"\K[^"]+')
+	notify-send -e "▶️🎵 Next Song '$TITLE'"
 }
 
 # If MPV is running, stop it
