@@ -46,7 +46,7 @@ populate_local_music() {
 }
 
 notification() {
-	notify-send -u normal -i "$iDIR/music.png" "Now Playing:" "$@"
+	notify-send -e -u normal -i "$iDIR/music.png" "Now Playing:" "$@"
 }
 
 play_local_music() {
@@ -78,9 +78,9 @@ play_online_music() {
 
 # If MPV is running, stop it
 # just play online music
-pkill mpv && notify-send -u low -i "$iDIR/music.png" "Music stopped" || play_online_music {
+pkill mpv && notify-send -e -u low -i "$iDIR/music.png" "Music stopped" || play_online_music {
 # replace above with below if you wan to play local storage music
-# pkill mpv && notify-send -u low -i "$iDIR/music.png" "Music stopped" || {
+# pkill mpv && notify-send -e -u low -i "$iDIR/music.png" "Music stopped" || {
 # 	main_choice=$(printf "Play from Online Stations\nPlay from Music directory\nShuffle Play from Music directory" | $wofi_base_cmd --prompt "🎶 Music Source")
 #
 # 	case "$main_choice" in
