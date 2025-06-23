@@ -16,7 +16,7 @@ declare -A online_music=(
 	# ["YT - Wish 107.5 YT Pinoy HipHop 📻🎶"]="https://youtube.com/playlist?list=PLkrzfEDjeYJnmgMYwCKid4XIFqUKBVWEs&si=vahW_noh4UDJ5d37"
 	["FM - 96.5 The Crab 📻🎶"]="http://centova.rockhost.com:8054/locals"
 	["FM - WGMP 104.9 The Gump 📻🎶"]="https://ice9.securenetsystems.net/WGMP"
-	["Radio - 1 Pure EDM Radio 🎧🎶"]="http://qa.torontocast.com:1170/;?nocache=14484&type=http"
+	["Radio - 1 Pure EDM Radio 🎧🎶"]="http://qa.torontocast.com:1170/"
 	["Radio - Chillhop 🎧🎶"]="http://stream.zeno.fm/fyn8eh3h5f8uv"
 	["Radio - Deep Space Chill 🎧🎶"]="http://stream.radioinfoweb.net:8000/chill"
 	["Radio - Ibiza Global 🎧🎶"]="https://filtermusic.net/ibiza-global"
