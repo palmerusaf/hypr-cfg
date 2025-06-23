@@ -20,8 +20,9 @@ if echo "$RESPONSE" | grep -q '"success"'; then
 	TITLE=$(echo "$SONG_INFO" | grep -oP '"data":\s*"\K[^"]+')
 
 	# Notify the user
-  notify-send -e "🎵 Next Song $TITLE"
-	notify-send -e "🎵 Skipping $CUR_TITLE "
+	notify-send -e "⏭️🎵 Skipping '$CUR_TITLE'"
+  sleep 3
+  notify-send -e "▶️🎵 Next Song '$TITLE'"
 else
 	notify-send -e "⚠️ MPV" "Cannot skip '$CUR_TITLE' – no next song or error occurred."
 fi
