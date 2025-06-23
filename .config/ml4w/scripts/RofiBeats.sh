@@ -77,13 +77,16 @@ play_online_music() {
 }
 
 # If MPV is running, stop it
-pkill mpv && notify-send -u low -i "$iDIR/music.png" "Music stopped" || {
-	main_choice=$(printf "Play from Online Stations\nPlay from Music directory\nShuffle Play from Music directory" | $wofi_base_cmd --prompt "🎶 Music Source")
-
-	case "$main_choice" in
-	"Play from Music directory") play_local_music ;;
-	"Play from Online Stations") play_online_music ;;
-	"Shuffle Play from Music directory") shuffle_local_music ;;
-	*) echo "Invalid choice" ;;
-	esac
-}
+# just play online music
+pkill mpv && notify-send -u low -i "$iDIR/music.png" "Music stopped" || play_online_music {
+# replace above with below if you wan to play local storage music
+# pkill mpv && notify-send -u low -i "$iDIR/music.png" "Music stopped" || {
+# 	main_choice=$(printf "Play from Online Stations\nPlay from Music directory\nShuffle Play from Music directory" | $wofi_base_cmd --prompt "🎶 Music Source")
+#
+# 	case "$main_choice" in
+# 	"Play from Music directory") play_local_music ;;
+# 	"Play from Online Stations") play_online_music ;;
+# 	"Shuffle Play from Music directory") shuffle_local_music ;;
+# 	*) echo "Invalid choice" ;;
+# 	esac
+# }
