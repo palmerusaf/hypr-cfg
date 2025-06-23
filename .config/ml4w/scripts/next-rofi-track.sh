@@ -23,5 +23,5 @@ if echo "$RESPONSE" | grep -q '"success"'; then
   notify-send -e "🎵 Next Song $TITLE"
 	notify-send -e "🎵 Skipping $CUR_TITLE "
 else
-	notify-send -e "⚠️ MPV" "Cannot skip – no next song or error occurred."
+	notify-send -e "⚠️ MPV" "Cannot skip '$CUR_TITLE' – no next song or error occurred."
 fi
