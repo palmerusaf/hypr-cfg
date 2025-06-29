@@ -2,7 +2,7 @@
 
 mDIR="$HOME/Music/"
 iDIR="$HOME/.config/swaync/icons" # Use your own icon directory
-wofi_base_cmd="wofi --show dmenu --app-id 'wofi-music' --width 600 --height 400 --allow-markup --insensitive --always-show"
+wofi_base_cmd="wofi -d -W 600 -H 400 -i -M fuzzy -n"
 
 # test url stations before adding with script below
 # mpv --input-ipc-server=/tmp/mpvsock --shuffle --vid=no "test here"
