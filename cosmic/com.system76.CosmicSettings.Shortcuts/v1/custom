@@ -17,6 +17,13 @@
             Super,
             Shift,
         ],
+        key: "i",
+    ): Spawn("/home/branden/dotfiles/wofi-beats/info.sh"),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
         key: "n",
     ): Spawn("/home/branden/dotfiles/wofi-beats/next-track.sh"),
 }
