@@ -11,12 +11,12 @@
             Shift,
         ],
         key: "m",
-    ): Spawn("/home/branden/dotfiles/.config/ml4w/scripts/RofiBeats.sh"),
+    ): Spawn("/home/branden/dotfiles/wofi-beats/main.sh"),
     (
         modifiers: [
             Super,
             Shift,
         ],
         key: "n",
-    ): Spawn("/home/branden/dotfiles/.config/ml4w/scripts/next-rofi-track.sh"),
+    ): Spawn("/home/branden/dotfiles/wofi-beats/next-track.sh"),
 }
