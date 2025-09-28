@@ -31,4 +31,5 @@
         ),
     ),
     variant: Combined,
+    show_bytes: false,
 )

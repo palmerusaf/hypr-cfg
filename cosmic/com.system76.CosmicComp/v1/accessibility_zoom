@@ -3,5 +3,5 @@
     show_overlay: false,
     increment: 100,
     view_moves: Continuously,
-    enable_mouse_zoom_shortcuts: true,
+    enable_mouse_zoom_shortcuts: false,
 )

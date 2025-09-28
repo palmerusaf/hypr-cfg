@@ -28,5 +28,5 @@
             alpha: 255,
         ),
     ),
-    unit: Celcius,
+    unit: Farenheit,
 )

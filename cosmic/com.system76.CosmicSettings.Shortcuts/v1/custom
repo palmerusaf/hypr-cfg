@@ -2,6 +2,14 @@
     (
         modifiers: [
             Super,
+            Shift,
+        ],
+        key: "i",
+        description: Some("wofi info"),
+    ): Spawn("/home/branden/dotfiles/wofi-beats/info.sh"),
+    (
+        modifiers: [
+            Super,
         ],
         key: "n",
     ): Spawn("kitty nvim"),
@@ -10,20 +18,15 @@
             Super,
             Shift,
         ],
-        key: "m",
-    ): Spawn("/home/branden/dotfiles/wofi-beats/main.sh"),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "i",
-    ): Spawn("/home/branden/dotfiles/wofi-beats/info.sh"),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
         key: "n",
+        description: Some("wofi next"),
     ): Spawn("/home/branden/dotfiles/wofi-beats/next-track.sh"),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "m",
+        description: Some("wofi"),
+    ): Spawn("/home/branden/dotfiles/wofi-beats/main.sh"),
 }

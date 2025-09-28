@@ -31,4 +31,5 @@
         ),
     ),
     variant: Upload,
+    show_bytes: false,
 )
