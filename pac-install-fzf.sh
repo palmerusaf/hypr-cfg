@@ -2,7 +2,7 @@
 
 fzf_args=(
   --multi
-  --preview 'sudo pacman -Sii {1}'
+  --preview 'pacman -Sii {1}'
   --preview-label='alt-p: toggle description, alt-j/k: scroll, tab: multi-select, F11: maximize'
   --preview-label-pos='bottom'
   --preview-window 'down:65%:wrap'
@@ -12,7 +12,7 @@ fzf_args=(
   --color 'pointer:green,marker:green'
 )
 
-pkg_names=$(sudo pacman -Slq | fzf "${fzf_args[@]}")
+pkg_names=$(pacman -Slq | fzf "${fzf_args[@]}")
 
 if [[ -n "$pkg_names" ]]; then
   # Turn newline-separated into array
