@@ -149,6 +149,12 @@ function re() {
     yay -Qq | fzf -q "$1" -m --preview 'yay -Qi {1}' | xargs -ro yay -Rns
 }
 
+# run pnpm script (requires jq)
+npm() {
+  local script
+  script=$(cat package.json | jq -r '.scripts | keys[] ' | sort | fzf) && pnpm run $(echo "$script")
+}
+
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/branden/.dart-cli-completion/zsh-config.zsh ]] && . /home/branden/.dart-cli-completion/zsh-config.zsh || true
