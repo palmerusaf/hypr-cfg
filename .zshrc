@@ -163,6 +163,33 @@ fman() {
 # Get the colors in the opened man page itself
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
+# search pdfs
+fpdf () {
+    open=xdg-open   # this will open pdf file withthe default PDF viewer on KDE, xfce, LXDE and perhaps on other desktops.
+
+    ag -U -g ".pdf$" \
+    | fast-p \
+    | fzf --read0 --reverse -e -d $'\t'  \
+        --preview-window down:80% --preview '
+            v=$(echo {q} | tr " " "|"); 
+            echo -e {1}"\n"{2} | grep -E "^|$v" -i --color=always;
+        ' \
+    | cut -z -f 1 -d $'\t' | tr -d '\n' | xargs -r --null $open > /dev/null 2> /dev/null
+}
+
+
+fzf-cmds() {
+  local cmd
+  cmd=$(print -l ${(k)commands} | sort -u | fzf --height 40% --reverse --prompt='Command> ')
+  if [[ -n $cmd ]]; then
+    BUFFER=$cmd
+    CURSOR=${#BUFFER}
+  fi
+  zle redisplay
+}
+zle -N fzf-cmds
+bindkey '^T' fzf-cmds
+
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/branden/.dart-cli-completion/zsh-config.zsh ]] && . /home/branden/.dart-cli-completion/zsh-config.zsh || true
