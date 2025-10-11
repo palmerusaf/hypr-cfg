@@ -132,7 +132,7 @@ alias wmsi='wakeonlan 4c:cc:6a:7f:7d:ad'
 alias open='xdg-open'
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-alias mirrorUp='sudo reflector --sort age --latest 20 --fastest 5 --save /etc/pacman.d/mirrorlist --protocol https'
+alias mirUp='sudo reflector --sort age --latest 20 --fastest 5 --save /etc/pacman.d/mirrorlist --protocol https'
 
 # Install packages using sudo pacman (change to pacman/AUR helper of your choice)
 function inp() {
