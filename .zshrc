@@ -127,20 +127,23 @@ export VISUAL="nvim"
 # echo -e "\033[30;36mPAR SIT FORTUNA LABORI\033[0m"
 echo -e "\033[30;36mbias towards action\033[0m"
 alias i='yay'
-alias yi='./dotfiles/yay-install-fzf.sh'
-alias pi='./dotfiles/pac-install-fzf.sh'
-alias ri='./dotfiles/yay-remove-fzf.sh'
 alias o='xdg-open'
 alias wmsi='wakeonlan 4c:cc:6a:7f:7d:ad'
 alias open='xdg-open'
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 alias mirrorUp='sudo reflector --sort age --latest 20 --fastest 5 --save /etc/pacman.d/mirrorlist --protocol https'
-#
+
+# Install packages using sudo pacman (change to pacman/AUR helper of your choice)
+function inp() {
+    pacman -Slq | fzf -q "$1" -m --preview 'pacman -Si {1}'| xargs -ro sudo pacman -S
+}
+
 # Install packages using yay (change to pacman/AUR helper of your choice)
-function in() {
+function iny() {
     yay -Slq | fzf -q "$1" -m --preview 'yay -Si {1}'| xargs -ro yay -S
 }
+
 # Remove installed packages (change to pacman/AUR helper of your choice)
 function re() {
     yay -Qq | fzf -q "$1" -m --preview 'yay -Qi {1}' | xargs -ro yay -Rns
