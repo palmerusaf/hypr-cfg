@@ -1,5 +1,6 @@
 Some(([
     "io.github.cosmic_utils.minimon-applet",
+    "com.system76.CosmicAppletWorkspaces",
 ], [
     "com.system76.CosmicAppletStatusArea",
     "com.system76.CosmicAppletBluetooth",
