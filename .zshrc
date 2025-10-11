@@ -164,7 +164,7 @@ fman() {
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
 # search pdfs
-fpdf () {
+function fpdf () {
     open=xdg-open   # this will open pdf file withthe default PDF viewer on KDE, xfce, LXDE and perhaps on other desktops.
 
     ag -U -g ".pdf$" \
@@ -178,7 +178,7 @@ fpdf () {
 }
 
 
-fzf-cmds() {
+function fzf-cmds() {
   local cmd
   cmd=$(print -l ${(k)commands} | sort -u | fzf --height 40% --reverse --prompt='Command> ')
   if [[ -n $cmd ]]; then
@@ -189,6 +189,10 @@ fzf-cmds() {
 }
 zle -N fzf-cmds
 bindkey '^T' fzf-cmds
+
+function vttCon(){
+  python /home/branden/dotfiles/vttconverter.py $1
+}
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
