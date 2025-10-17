@@ -150,7 +150,7 @@ function re() {
 }
 
 # run pnpm script (requires jq)
-npm() {
+fpm() {
   local script
   script=$(cat package.json | jq -r '.scripts | keys[] ' | sort | fzf) && pnpm run $(echo "$script")
 }
@@ -177,18 +177,6 @@ function fpdf () {
     | cut -z -f 1 -d $'\t' | tr -d '\n' | xargs -r --null $open > /dev/null 2> /dev/null
 }
 
-
-function fzf-cmds() {
-  local cmd
-  cmd=$(print -l ${(k)commands} | sort -u | fzf --height 40% --reverse --prompt='Command> ')
-  if [[ -n $cmd ]]; then
-    BUFFER=$cmd
-    CURSOR=${#BUFFER}
-  fi
-  zle redisplay
-}
-zle -N fzf-cmds
-bindkey '^T' fzf-cmds
 
 function vttCon(){
   python /home/branden/dotfiles/vttconverter.py $1
