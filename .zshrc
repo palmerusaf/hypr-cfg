@@ -125,7 +125,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 # echo -e "\033[30;36mPAR SIT FORTUNA LABORI\033[0m"
-echo -e "\033[30;36mbias towards action\033[0m"
+echo -e "\033[30;36mAwareness\033[0m"
 alias i='yay'
 alias o='xdg-open'
 alias wmsi='wakeonlan 4c:cc:6a:7f:7d:ad'
