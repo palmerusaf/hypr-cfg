@@ -161,7 +161,7 @@ fman() {
     man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man | col -bx | bat -l man -p --color always' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
 }
 # Get the colors in the opened man page itself
-export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
+export MANPAGER="sh -c 'sed -r \"s/\x1B\\[[0-9;:]*[mK]//g\" | bat -l man -p --paging always'"
 
 # search pdfs
 function fpdf () {
