@@ -186,3 +186,5 @@ function vttCon(){
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/branden/.dart-cli-completion/zsh-config.zsh ]] && . /home/branden/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+. /usr/share/nvm/init-nvm.sh
