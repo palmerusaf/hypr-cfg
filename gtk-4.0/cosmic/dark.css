@@ -3,7 +3,7 @@
 @define-color window_fg_color rgba(160, 160, 160, 1.00);
 
 @define-color view_bg_color rgba(9, 9, 9, 1.00);
-@define-color view_fg_color rgba(205, 205, 205, 1.00);
+@define-color view_fg_color rgba(218, 218, 218, 1.00);
 
 @define-color headerbar_bg_color rgba(0, 0, 0, 1.00);
 @define-color headerbar_fg_color rgba(160, 160, 160, 1.00);
@@ -11,14 +11,14 @@
 @define-color headerbar_backdrop_color rgba(0, 0, 0, 1.00);
 
 @define-color sidebar_bg_color rgba(9, 9, 9, 1.00);
-@define-color sidebar_fg_color rgba(205, 205, 205, 1.00);
+@define-color sidebar_fg_color rgba(218, 218, 218, 1.00);
 @define-color sidebar_shade_color rgba(0, 0, 0, 0.08);
 @define-color sidebar_backdrop_color rgba(29, 29, 29, 1.00);
 
 @define-color secondary_sidebar_bg_color rgba(3, 3, 3, 1.00);
 @define-color secondary_sidebar_fg_color rgba(192, 192, 192, 1.00);
 @define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.08);
-@define-color secondary_sidebar_backdrop_color rgba(24, 24, 24, 1.00);
+@define-color secondary_sidebar_backdrop_color rgba(23, 23, 23, 1.00);
 
 @define-color card_bg_color rgba(2, 2, 2, 1.00);
 @define-color card_fg_color rgba(186, 186, 186, 1.00);
@@ -27,7 +27,7 @@
 @define-color thumbnail_fg_color rgba(186, 186, 186, 1.00);
 
 @define-color dialog_bg_color rgba(9, 9, 9, 1.00);
-@define-color dialog_fg_color rgba(205, 205, 205, 1.00);
+@define-color dialog_fg_color rgba(218, 218, 218, 1.00);
 
 @define-color popover_bg_color rgba(2, 2, 2, 1.00);
 @define-color popover_fg_color rgba(186, 186, 186, 1.00);

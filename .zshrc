@@ -187,4 +187,7 @@ function vttCon(){
 [[ -f /home/branden/.dart-cli-completion/zsh-config.zsh ]] && . /home/branden/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
-# . /usr/share/nvm/init-nvm.sh
+. /usr/share/nvm/init-nvm.sh
+export TAVILY_API_KEY="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"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
